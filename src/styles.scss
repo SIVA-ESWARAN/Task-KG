@@ -1,0 +1,168 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$KG-Timeslot-primary: mat-palette($mat-indigo);
+$KG-Timeslot-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$KG-Timeslot-warn: mat-palette($mat-red);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$KG-Timeslot-theme: mat-light-theme((
+  color: (
+    primary: $KG-Timeslot-primary,
+    accent: $KG-Timeslot-accent,
+    warn: $KG-Timeslot-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($KG-Timeslot-theme);
+
+/* You can add global styles to this file, and also import other style files */
+body {
+    background-color: #e0e3ee;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+$font-family: "kg-icon" !default;
+$font-path: "./assets/fonts" !default;
+
+$kg-caleder: "\e900";
+$kg-cog: "\e901";
+$kg-drag: "\e902";
+$kg-evening: "\e903";
+$kg-morning: "\e904";
+$kg-vitals: "\e905";
+
+
+@font-face {
+    font-family: '#{$font-family}';
+    src:  url('#{$font-path}/#{$font-family}.eot?3i5qax');
+    src:  url('#{$font-path}/#{$font-family}.eot?3i5qax#iefix') format('embedded-opentype'),
+      url('#{$font-path}/#{$font-family}.ttf?3i5qax') format('truetype'),
+      url('#{$font-path}/#{$font-family}.woff?3i5qax') format('woff'),
+      url('#{$font-path}/#{$font-family}.svg?3i5qax##{$font-family}') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+  
+  [class^="kg-"], [class*=" kg-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: '#{$font-family}' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .kg-caleder {
+    &:before {
+      content: $kg-caleder; 
+    }
+  }
+  .kg-cog {
+    &:before {
+      content: $kg-cog; 
+    }
+  }
+  .kg-drag {
+    &:before {
+      content: $kg-drag; 
+    }
+  }
+  .kg-evening {
+    &:before {
+      content: $kg-evening; 
+    }
+  }
+  .kg-morning {
+    &:before {
+      content: $kg-morning; 
+    }
+  }
+  .kg-vitals {
+    &:before {
+      content: $kg-vitals; 
+    }
+  }
+  
+  
+
+.text-blue {
+    color: #508aeb !important;
+    font-size: 15px;
+}
+
+.text-grey  {
+    color: gray;
+}
+
+.text-green  {
+    color: #01c1ab;
+}
+
+.mat-typography{
+    background-color: #e0e3ee !important;
+}
+
+
+.mat-calendar-arrow {
+    display: none !important;
+}
+
+.mat-calendar-period-button {
+    transform: translateX(60px);
+}
+
+.mat-calendar-previous-button {
+    transform: translateX(-170px);
+}
+
+.mat-datepicker-input {
+    margin-left: 10px !important;
+}
+
+.card {
+    border-radius: 10px !important;
+}
+
+.mat-calendar-body-selected {
+    background-color: #3bb55d !important;
+}
+
+.special-date > .mat-calendar-body-cell-preview {
+    background-color: #4d7cff !important;
+    height: 5px;
+    width: 5px;
+    transform: translate(110%, 190%);
+    border-radius: 100% !important;
+    transform: translate(-3px,23px);
+    border-radius: 100% !important;
+    left: 50%;
+    bottom: 0;
+}
